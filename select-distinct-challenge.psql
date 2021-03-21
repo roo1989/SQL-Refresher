@@ -1,0 +1,9 @@
+/**
+* An Australian visitor isn't familiar with MPAA movie ratings.
+* e.g PG, PG-13, R, etc...
+* We want to lmpw tje types of ratings we have in our database
+* What ratins do we have available?
+*/
+
+-- Answer: Select distinct rantings column from the film table.
+SELECT DISTINCT rating FROM film;
