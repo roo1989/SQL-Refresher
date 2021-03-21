@@ -1,0 +1,17 @@
+-- Example syntax for SELECT statement:
+-- SELECT column_name FROM table_name;
+
+/**
+ * In SQL you can select a certain unsorted number of comma seperated column name.
+ * SELECT column_1, column_3, column_8 FROM table_name;
+ * On the other hand, you can select all columns using the asterisk(*) sign.
+ * SELECT * FROM table_1;
+ * But on large tables that can decrease performance if you only need say two out of 40 columns
+ */
+
+ -- Let's walk through some examples in our dvdrental database to get some practice.
+
+ SELECT * FROM actor;
+ SELECT first_name, last_name FROM actor;
+
+SELECT * FROM city;
