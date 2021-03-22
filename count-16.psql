@@ -1,0 +1,18 @@
+-- The COUHT() function,
+
+/**
+* The COUNT function returns trhe numbe of input rows tht match a specific condition on a query.
+* We can aplly COUNT on a specific column or all of them using the asterisk symbol.
+*/
+
+-- When using count, its pretty dull on itself since ir's just counrin the rows in a table.
+-- Since every table is going to be the exact amount of rows, there is not a usecase to not use COUNT(*) when making a count of rows.
+-- But COUNT() can be used with DISTINCT, to get the count of distinct rows in a column. Then we would pass in a specific column.
+
+-- Let's plau around with the film table and rating,
+
+-- Question: How many rows are in films?
+SELECT COUNT(*) FROM film; -- The answer will be 1000
+
+-- Quesiton: How many duplicate/distinct values in the rating column;
+SELECT COUNT(DISTINCT(rating)) FROM film;
