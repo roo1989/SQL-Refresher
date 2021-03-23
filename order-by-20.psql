@@ -1,0 +1,6 @@
+/**
+Postgres does not return results in an ordered way,
+it returs it in the most convinient way for POSTGRES.
+
+You can use ORDER BY to sort rows based on a column value, in either ascending order or decending order.
+This can be done on both alphabetical level and numerical.
