@@ -1,0 +1,18 @@
+-- Let's get all customers
+SELECT * FROM customer;
+
+-- Let's find Jerid and send him up to HR - Getting a best customer award.
+SELECT * FROM customer WHERE first_name = 'Jared';
+
+-- Spice things up with our condisionals on columns.
+SELECT title FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99
+AND rating='R';
+
+-- Write a query where rating has to be either PG or PG-13
+SELECT title FROM film
+WHERE rating IN('PG', 'PG-13');
+
+-- Aother way to do this is using OR operators.
+SELECT title FROM film
+WHERE rating = 'PG' OR rating = 'PG-13';
