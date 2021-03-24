@@ -1,0 +1,27 @@
+/**
+Challenge Task 1.
+    - We want to reward our first 10 paying customers.
+    - What are the customer ids of the first 10 paynig customers and who created the payment.
+*/
+
+-- Solution
+
+SELECT customer_id FROM payment
+ORDER BY payment_date
+LIMIT 10;
+
+/**
+Challenge Task 2.
+    - A customer wants to quickly rent a video to watch over their short lunch break.
+    - What are the titles of the 5 shortest (in length of runtime) movies?
+*/
+
+-- Solution
+SELECT title from film
+ORDER BY length 
+LIMIT 5;
+
+
+-- Bonus question.
+SELECT COUNT(*) FROM film
+WHERE length <= 50;
