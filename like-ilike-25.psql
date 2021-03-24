@@ -1,0 +1,49 @@
+/**
+String matching:
+If we want to to match against a general pattern in a string
+    - All emails ending in '@gmail.com'
+    - All names that begin with 'A'
+
+The LIKE operator allows us to perform pattern matching against string data with the use
+of wildard charcaters:
+    - Percent %
+        - Matches any sequence of characters
+    - Underscore _
+        - Matches any single character
+
+All names that begin with an 'A' uppercase
+    - WHERE name LIKE 'A%'
+All names that end with a lowercase 'a'
+    - WHERE name LIKE '%a'
+
+LIKE is case sensitive, we can use ILIKE whis is case-insensitive.
+
+Using the underscore allows us to replace
+just a single character.
+    - Get all Mission Impossible films
+    - WHERE LIKE 'Mission Impossible _' Where we could match one, two, three etc...
+
+You can use multiple underscores.
+Imagine if we had version string codes in the format 'Version#A4', 'Version#B7, etc...
+    - WHERE value LIKE 'Version#__'
+We can also combine pattern matching operators to create more complex patterns
+    - WHERE name LIKE '_her%'
+        - Cheryl
+        - Theresa
+        - Sherri
+*/
+
+-- Examples
+
+-- Let's get all first names that start with s in both case and case-insensitive.
+
+-- Case sensitive
+SELECT * FROM customer
+WHERE first_name LIKE 'S%' AND last_name LIKE 'M%';
+
+
+-- Case insensitive
+SELECT * FROM customer
+WHERE first_name ILIKE 'S%' AND last_name ILIKE 'M%';
+
+SELECT title FROM film;
