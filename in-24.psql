@@ -1,0 +1,37 @@
+/**
+In certain cases you want to check for multiple possible
+value options, for example, if a user's name shows up IN a list of known names.
+
+We can use the IN operatorto create a condition that checks to see if a value in included in a list of multple options.
+Example query:
+
+    - SELECT color from table
+      WHERE color IN ('red', 'blue');
+
+Example query excluding colors using the NOT operator.
+
+    - SELECT color from table
+      WHERE color NOT IN ('red', 'blue', 'green');
+*/
+
+-- Examples
+
+-- Get examples of amounts
+SELECT DISTINCT(amount) FROM payment
+ORDER BY amount DESC;
+
+-- Get rows that include just the three highest amounts.
+SELECT * FROM payment
+WHERE amount IN (11.99, 10.99, 9.99)
+ORDER BY amount DESC;
+
+-- Get some string examples.
+SELECT * FROM customer;
+
+-- Get some first_names
+SELECT * FROM customer
+WHERE first_name IN ('Jared', 'Mary', 'Susan');
+
+-- Use the NOT operator as well
+SELECT * FROM customer
+WHERE first_name NOT IN ('Jared', 'Mary', 'Susan');
