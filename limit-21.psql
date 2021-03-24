@@ -1,0 +1,30 @@
+/**
+The LIMIT command allows us to limit the number of rows returned for a query,
+Useful for only wanting to see the few rows in a table layout.
+LIMUT also combines well with the ORDER BY statement.
+
+LIMIT always goes at the very end of a query request and is the last command to be executed.
+
+Let's see some examples
+
+*/
+
+SELECT * FROM payment; -- Will return all rows in the payment table.
+
+-- Let's get ordr the query and order by the payments by first to last.
+SELECT * FROM payment
+ORDER BY payment_date; -- Order by ascending order (last payments first)
+
+SELECT * FROM payment
+ORDER BY payment_date DESC; -- Order by descending order (get the latest payments)
+
+-- Business scenario: I want to get the last ten payments made using the LIMIT statement.
+SELECT * FROM payment
+ORDER BY payment_date DESC
+LIMIT 10;
+
+-- Same as above, except filter by where the amount does not equal zero.
+SELECT * FROM payment
+WHERE amount != 0.00
+ORDER BY payment_date DESC
+LIMIT 10;
