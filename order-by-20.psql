@@ -4,3 +4,22 @@ it returs it in the most convinient way for POSTGRES.
 
 You can use ORDER BY to sort rows based on a column value, in either ascending order or decending order.
 This can be done on both alphabetical level and numerical.
+
+Basic syntax of ORDER BY
+
+SELECT column_1,column_2
+FROM table
+ORDER BY column_1 ASC / DESC
+
+Columns are by default ordered by ascending order.
+*/
+
+-- Let's explore the customer table and sort the first_name column to be in ascending order.
+
+SELECT * FROM customer
+ORDER BY first_name; -- Will sort from A-Z
+
+-- Let's order by store_id, first_name and last_name
+SELECT store_id first_name, last_name
+FROM customer
+ORDER BY store_id, first_name, last_name
