@@ -1,0 +1,7 @@
+/**
+Let's say we have two rows.
+One Category row that holds A, A, B, B, C, C
+One Data value row that holds 10, 5, 2, 4, 12, 16
+
+We need to choose a categorical column to GROUP BY
+*/
