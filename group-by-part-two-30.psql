@@ -1,0 +1,17 @@
+SELECT * FROM payment;
+
+-- Let's use group by on the payment table to see what customer is spending the most money,
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC; -- Now we see the customer number 148 that spent 211.55.
+
+SELECT customer_id, staff_id, SUM(amount)
+FROM payment
+GROUP BY customer_id, staff_id
+ORDER BY staff_id, SUM(amount) DESC;
+
+SELECT DATE(payment_date), SUM(amount)
+FROM payment
+GROUP BY DATE(payment_date)
+ORDER BY SUM(amount) DESC;
