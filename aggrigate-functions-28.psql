@@ -1,0 +1,61 @@
+/**
+SQL provides a variaty of aggrigaton functions.
+
+The main idea behind an aggregate function
+is to to take multiple inputs and return a single output.
+
+The most common aggregate functions:
+    - AVG() - returns average value
+    - COUNT() - returns number of values
+    - MAX() - returns maximum value
+    - MIN() - returns minimum vaue
+    - SUM() - returns the sum of all values.
+
+Aggregate functions only happen in the SELECT clause and HAVING clause.
+
+Special Notes:
+
+    - AVG() returns a floating point value
+      many decimal places (e.g 2.342418...)
+        - You can use ROUND() in conjunction with AVG() to specify
+          precision after the decimal.
+
+    - COUNT() simply returns the number of rows, which means by convention we just use COUNT(*)
+*/
+
+SELECT * FROM film;
+
+-- Let's take a look at the MIN(), NAX() aggregate functions on film replacement cost.
+
+-- Check MIN() replacement cost on all the rows in that table.
+SELECT MIN(replacement_cost)
+FROM FILM; -- Returns 9.99
+
+-- Check MAX() replacement cost on all the rows in that table.
+SELECT MAX(replacement_cost)
+FROM film; -- Returns 29.99
+
+-- Let's check them both individually.
+SELECT MIN(replacement_cost), MAX(replacement_cost)
+FROM film; -- Returns two rows with the values above.
+
+-- Count we've seen a million times by now.
+SELECT COUNT(*)
+FROM film; -- Returns 1000
+
+-- Let's get the average replacement_cost of a film.
+SELECT AVG(replacement_cost)
+FROM film; -- Returns 19.9840000000000000
+
+-- Perhaps we don't want so many decimals so let's wrap the AVG() with round, that takes two parameters.
+-- One is th actual average, and the second is th number of decimal places we want to see.
+
+-- Let's make a query that returns the average with two decimal places.
+SELECT ROUND(AVG(replacement_cost), 2)
+FROM film; -- Better, returns 19.98.
+-- It's not limited to two decimal points, you can set the second argument to whatever you please.
+
+-- And the last one, is to sum up how much it would cost us to replace all 1000 movies.
+
+SELECT SUM(replacement_cost)
+FROM film; -- Returns 19984.00 which makes sense if you look at the average :)
