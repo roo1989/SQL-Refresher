@@ -1,0 +1,10 @@
+/**
+Having is essentially a way to filter an aggregated function after doing a GROUP BY.
+*/
+
+-- Example on customer_id and SUM(amount) where we filter by amount.
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+HAVING SUM(amount) > 100
+ORDER BY SUM(amount) DESC;
