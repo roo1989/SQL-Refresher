@@ -1,0 +1,16 @@
+SELECT staff_id, COUNT(amount)
+FROM payment
+WHERE staff_id IN (1, 2)
+GROUP BY staff_id
+ORDER BY COUNT(amount) DESC; -- Correct
+
+SELECT rating, ROUND(AVG(replacement_cost), 2)
+FROM film
+GROUP BY rating
+ORDER BY ROUND(AVG(replacement_cost)) DESC;
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;
