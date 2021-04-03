@@ -1,0 +1,18 @@
+/**
+  FULL OUTER JOIN will select all columns from both tables weather the column exists in both tables or not.
+  It will fill inn the empty columns with null.
+ */
+
+SELECT * FROM customer
+FULL OUTER JOIN payment
+ON customer.customer_id = payment.customer_id
+WHERE customer.customer_id IS null
+OR payment.payment_id IS null;
+
+-- Rules out that we have information about a customer that has not made a transaction in our payment table.
+-- Same if we would do DISTINCT on both tables in two queries.
+-- Result is empty since there are as many unique customer_ids as in unique payment_id's
+
+-- Other ways to confirm this query above.
+SELECT COUNT(DISTINCT customer_id) FROM payment; -- Returns 599 rows
+SELECT COUNT(DISTINCT customer_id) FROM customer; -- Return 599 rows
