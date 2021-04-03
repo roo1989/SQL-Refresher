@@ -1,0 +1,13 @@
+/**
+Joins.
+  JOINS will allow us to combine information from multiple tables.
+  Section Overview:
+    - Creating an alias with the AS clause.
+    - Understand the different kind of JOINs.
+      - INNER JOINS
+      - OUTER JOINS
+      - FULL JOINS
+      - UNIONS
+
+    - Challenge Task.
+ */
