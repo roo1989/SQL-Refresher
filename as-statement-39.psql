@@ -1,0 +1,39 @@
+/**
+The AS claue allows us to create alias on columns.
+
+Example syntax:
+SELECT column AS new_name
+FROM table;
+*/
+
+-- Let's get the SUM of the amount in the payment table but output it to the customer as a more readable alias.
+
+SELECT SUM(amount) AS net_revenue
+FROM payment; -- Will output net_revenue: 61312.04
+
+/**
+The AS operator gets executed at the very end of a query,
+meaning that we can not use the alias inside a WHERE opeator.
+
+Let's walk through some examples.
+*/
+
+SELECT COUNT(*) AS num_transactions
+FROM payment;
+
+-- An example where you can not use an alias to filter by.
+-- Example:
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+HAVING SUM(amount) > 100;
+
+
+-- Same query as above except with an alias on sum.
+SELECT customer_id, SUM(amount) AS total_spent
+FROM payment
+GROUP BY customer_id
+hAVING SUM(amount) < 100; 
+-- HAVING SUM(total_spent) 
+-- These AS statements are executed at the very end of the query, that's why this won't work.
