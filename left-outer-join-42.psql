@@ -1,0 +1,9 @@
+/**
+  A LEFT OUTER JOIN results in the set of records that are in the left table,
+  if there is no match with the right table, the results are null.
+
+  You can use LEFT JOIN syntax instead of the full LEFT OUTER JOIN.
+
+  On LEFT OUTER JOINS the order of the table matters unlike previous JOINS we have looked at.
+  The reason for that being, is we specify the table we are selecting from as the LEFT table.
+ */
