@@ -1,0 +1,25 @@
+/**
+There are several types of JOINs, here we are going to go through
+the simplest JOIN type which is an INNER JOIN.
+
+Question: What is a JOIN operation?
+Answer: Simply put, JOINS allow us to combine multiple tables together.
+        The main reason for the different JOIN types is to decide how
+        to deal with information only present in one of the joined tables.
+An INNER JOIN will result with the set of records that match records from two or more tables.
+
+Example Query:
+
+SELECT * FROM TableA
+INNER JOIN TableB
+ON TableA.col_match = TableB.col_match;
+ */
+
+
+-- Let's see what customers are in the customer table and the payment table:
+
+SELECT payment.customer_id, payment.payment_id, customer.first_name
+FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id;
+
